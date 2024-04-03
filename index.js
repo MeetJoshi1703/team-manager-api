@@ -5,6 +5,7 @@ import userRoutes from './api/routes/userRoutes.js';
 import teamRoutes from './api/routes/teamRoutes.js';
 import connectDB from './api/config/db.js'; 
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 const port = process.env.PORT || 8000;
 
@@ -14,7 +15,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(bodyParser.json()); app.use(bodyParser.urlencoded({ extended: true }));
+
 
 
 
